@@ -1,0 +1,16 @@
+
+Register
+
+<form method="POST">
+    {{ form.hidden_tag() }} <!-- This makes a form. The POST is to indicate that this is something to submit-->
+    {{ form.username.label(class="form-label") }}
+    {{ form.username(class="form-control") }} <!--Creates the box and submit button below-->
+    {{ form.email.label(class="form-label") }}
+    {{ form.email(class="form-control") }}
+    {{ form.password.label(class="form-label") }}
+    {{ form.password(class="form-control") }} 
+    {{ form.confirm_password.label(class="form-label") }}
+    {{ form.confirm_password(class="form-control") }}
+    <br/>
+    {{ form.submit(class="btn btn-primary") }}
+</form>

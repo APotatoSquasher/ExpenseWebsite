@@ -1,0 +1,22 @@
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.description.label(class="form-label") }}
+    {{ form.description(class="form-control") }}
+    {{ form.amount.label(class="form-label") }}
+    {{ form.amount(class="form-control") }}
+    {{ form.category.label(class="form-label") }}
+    {{ form.category(class="form-control") }}
+</br>
+</br>
+    Keep the income limit form empty if you don't want to set an income limit or change the existing limit.
+    {{ form.income_limit.label(class="form-label") }}
+    {{ form.income_limit(class="form-control") }}
+    {{ form.submit(class="btn btn-primary") }}
+    <br/>
+    My income limits:
+    <br/>
+    {% for income in income_limits %}
+        {{ income }} - {{ income_limits[income] }}
+</br>
+    {% endfor %}
+</form>

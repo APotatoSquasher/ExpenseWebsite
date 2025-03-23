@@ -1,0 +1,21 @@
+Add Income 
+<form method="POST">
+    <!--{% for form1 in forms %}
+    {{ form1.hidden_tag() }}
+    {% for income in income_limits %}
+        {% if income_limits.index(income) == forms.index(form1) %}
+            {{ income }}
+        {% endif %}
+    {% endfor %}
+    {{ form.amount.label(class="form-label") }}
+    {{ form.amount(class="form-control") }}
+    {% endfor %}
+    </br>
+    {{ form.submit(class="btn btn-primary") }}-->
+    {{ form.hidden_tag() }}
+    {% for subform in form.amount %}
+        {{ subform.amount.label(class="form-label") }}
+        {{ subform.amount(class="form-control") }}
+    {% endfor %}
+    {{ form.submit(class="btn btn-primary") }}
+</form>

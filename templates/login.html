@@ -1,0 +1,10 @@
+Login Page
+<form method="POST">
+    {{ form.hidden_tag() }} <!-- This makes a form. The POST is to indicate that this is something to submit-->
+    {{ form.email.label(class="form-label") }}
+    {{ form.email(class="form-control") }}
+    {{ form.password.label(class="form-label") }}
+    {{ form.password(class="form-control") }} 
+    <br/>
+    {{ form.submit(class="btn btn-primary") }}
+</form>

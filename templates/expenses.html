@@ -1,0 +1,5 @@
+Total price of expenses: ${{ total_expenses }}
+<br>
+{% for expense in expenses %}
+    {{ expense.description }} - ${{ expense.amount }} Category: {{ expense.category }} Posted on {{ expense.date }} </br>
+{% endfor %}
