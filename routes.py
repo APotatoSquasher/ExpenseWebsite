@@ -157,6 +157,10 @@ def update_expense(expense_id):
         expense.amount = form.amount.data
         expense.category = form.category.data
         expense.income_limit = form.income_limit.data
+        income_limits = Expense.query.filter_by(user_id=current_user.id).all()
+        for income in income_limits:
+            if income.category == expense.category:
+                income.income_limit = expense.income_limit # Changes the income limit of every line in the category
         db.session.commit()
         flash('Expense updated successfully!', 'success')
         return redirect(url_for('expenses'))
